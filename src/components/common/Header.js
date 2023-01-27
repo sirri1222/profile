@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   return (
   <header>
+
+    {/* {레이아웃} */}
+    <div className='inner'>
     <h1>
       <Link to="/">logo</Link>
     </h1>
@@ -18,7 +21,7 @@ const Header = () => {
       <li> <Link to="/location">location</Link> </li>
       <li> <Link to="/join">join</Link> </li>
    
-      </ul>
+      </ul></div>
   </header>
   )
 }

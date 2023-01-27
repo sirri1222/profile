@@ -1,0 +1,36 @@
+header {
+  width: 100%;
+  background-color: #222;
+  .inner {
+    position: relative;
+    width: 1180px;
+    height: 80px;
+    margin: 0 auto;
+
+    h1 {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      a {
+        font-weight: 700;
+        color: #fff;
+        font-size: 24px;
+      }
+    }
+    #gnb{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      li{
+       float: left;
+        a{
+          display: block;
+          padding: 20px 30px;
+          font-weight: 600;
+          font-size: 14px;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
