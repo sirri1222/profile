@@ -1,3 +1,5 @@
+import { Route } from "react-router-dom";
+
 // common
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
@@ -8,9 +10,9 @@ import Content from "./components/main/Content";
 import Department from "./components/sub/Department";
 import Community from "./components/sub/Community";
 import Gallery from "./components/sub/Gallery";
-import Location from "./components/sub/Join";
 import Youtube from "./components/sub/Youtube";
-import { Route } from "react-router-dom";
+import Location from "./components/sub/Location";
+import Join from "./components/sub/Join";
 
 function App() {
   return (
