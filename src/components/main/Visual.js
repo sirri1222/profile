@@ -2,7 +2,7 @@ import React from 'react'
 
 const Visual = () => {
   return (
-    <div>Visual</div>
+    <div id='visual'>Visual</div>
   )
 }
 
