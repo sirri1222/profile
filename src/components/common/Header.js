@@ -1,5 +1,11 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+
+// FontAwsome 적용
+// https://fontawesome.com/v5/docs/web/use-with/react
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+
 // a태그 href 를 이용하면 페이지갱신
 // Link 컴포넌트를 이용하면 컴포넌트 갱신(spa)
 // :a태그로 자동 변환이 된다 .
@@ -25,7 +31,8 @@ const Header = () => {
       <li> <NavLink activeStyle={active} to="/location">location</NavLink> </li>
       <li> <NavLink activeStyle={active} to="/join">join</NavLink> </li>
    
-      </ul></div>
+      </ul>
+      <FontAwesomeIcon icon={faBars} className="fabars"></FontAwesomeIcon></div>
   </header>
   )
 }

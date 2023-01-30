@@ -1,6 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-
+// g화면반응형 기준픽셀
+$tablet: 1180px;
+$mp:540px;
 
 @import "common/reset";
 @import "common/header";

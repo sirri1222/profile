@@ -21,6 +21,7 @@ header {
       position: absolute;
       right: 0;
       bottom: 0;
+     
       li{
        float: left;
         a{
@@ -32,5 +33,39 @@ header {
         }
       }
     }
+    .fabars{
+      position: absolute;
+      right: 30px;
+      bottom: 20px;
+      font-size: 24px;
+      color: #fff;
+      display: none;
+    }
   }
+  &.main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: transparent;
+
+  }
+}
+
+// tablet
+@media screen and (max-width: $tablet) {
+  header{
+    .inner{
+
+      width: 100%;
+      h1{
+        left: 30px;
+      }
+      #gnb{
+        display: none;
+      }
+    }
+
+  }
+  
 }
