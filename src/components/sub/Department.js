@@ -1,8 +1,9 @@
 import React from 'react'
+import Layout from '../common/Layout'
 
 const Department = () => {
   return (
-    <div>Department</div>
+    <Layout title={"Department"}>Department</Layout>
   )
 }
 

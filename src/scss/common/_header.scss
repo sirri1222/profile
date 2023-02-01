@@ -17,14 +17,13 @@ header {
         font-size: 24px;
       }
     }
-    #gnb{
+    #gnb {
       position: absolute;
       right: 0;
       bottom: 0;
-     
-      li{
-       float: left;
-        a{
+      li {
+        float: left;
+        a {
           display: block;
           padding: 20px 30px;
           font-weight: 600;
@@ -33,7 +32,7 @@ header {
         }
       }
     }
-    .fabars{
+    .fa-bars {
       position: absolute;
       right: 30px;
       bottom: 20px;
@@ -42,30 +41,28 @@ header {
       display: none;
     }
   }
-  &.main{
+  &.main {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 9;
     background: transparent;
-
   }
 }
-
 // tablet
 @media screen and (max-width: $tablet) {
-  header{
-    .inner{
-
+  header {
+    .inner {
       width: 100%;
-      h1{
+      h1 {
         left: 30px;
       }
-      #gnb{
+      #gnb {
         display: none;
       }
+      .fa-bars {
+        display: block;
+      }
     }
-
   }
-  
 }

@@ -1,10 +1,21 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-// g화면반응형 기준픽셀
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+// 화면반응형 기준픽셀
+// scss 에서 변수는 $시작
 $tablet: 1180px;
-$mp:540px;
+$mp: 540px;
 
+// common
 @import "common/reset";
 @import "common/header";
 @import "common/footer";
-
+@import "common/layout";
+// main
+@import "main/content";
+@import "main/visual";
+// sub
+@import "sub/community";
+@import "sub/department";
+@import "sub/gallery";
+@import "sub/join";
+@import "sub/location";
+@import "sub/youtube";

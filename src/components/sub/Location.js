@@ -1,8 +1,9 @@
 import React from 'react'
+import Layout from '../common/Layout'
 
 const Location = () => {
   return (
-    <div>Location</div>
+    <Layout title={"Location"}>Location</Layout>
   )
 }
 

@@ -1,8 +1,9 @@
 import React from 'react'
+import Layout from '../common/Layout'
 
 const Join = () => {
   return (
-    <div>Join</div>
+    <Layout title={"Join"}>Join</Layout>
   )
 }
 
