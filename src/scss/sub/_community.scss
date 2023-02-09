@@ -2,4 +2,62 @@
   figure {
     background: hotpink;
   }
+  > .inner {
+    .inputBox {
+      border: 1px solid #bbb;
+      padding: 50px;
+      margin-bottom: 50px;
+      input[type="text"],
+      textarea {
+        width: 50%;
+        padding: 8px 10px;
+        border: 1px solid #aaa;
+        margin-bottom: 20px;
+        resize: none;
+      }
+      .btnSet {
+        button {
+          width: 150px;
+          height: 30px;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          background: #555;
+          color: #fff;
+          cursor: pointer;
+          margin-right: 20px;
+        }
+      }
+    }
+    .showBox {
+      border: 1px solid #bbb;
+      padding: 50px;
+      article {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 40px;
+        padding: 30px;
+        background: #fff;
+        .btnSet {
+          display: flex;
+          align-items: center;
+          width: 35%;
+          button {
+            width: 50%;
+            height: 30px;
+            border: none;
+            background: #555;
+            color: #fff;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: 0.3s;
+            &:hover {
+              background: #111;
+            }
+          }
+        }
+      }
+    }
+  }
 }
