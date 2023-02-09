@@ -1,33 +1,116 @@
 .Join {
-    figure {
-      background: green;
-    }
-    table {
-      width: 100%;
-      border-top: 2px solid #444;
-      border-bottom: 2px solid #444;
-      th {
-        width: 25%;
-        padding: 10px 0px;
-        padding-left: 30px;
-        text-align: left;
-        border-bottom: 1px solid #bbb;
+  figure {
+    background: green;
+  }
+  table {
+    width: 100%;
+    border-top: 2px solid #444;
+    border-bottom: 2px solid #444;
+    th {
+      width: 25%;
+      padding: 10px 0px;
+      padding-left: 30px;
+      text-align: left;
+      border-bottom: 1px solid #bbb;
+      &:last-child {
+        text-align: center;
+        input[type="reset"],
+        input[type="submit"] {
+          width: 150px;
+          height: 36px;
+          border: none;
+          background: #333;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 12px;
+          color: #fff;
+          margin: 0px 10px;
+          cursor: pointer;
+          transition: 0.3s;
+          &:hover {
+            background: hotpink;
+          }
+        }
       }
+    }
+    td {
+      border-bottom: 1px solid #bbb;
+      border-left: 1px solid #bbb;
+      padding: 10px 0 10px 30px;
+      input[type="text"],
+      input[type="password"],
+      textarea,
+      select {
+        border: 1px solid #ccc;
+        padding: 6px 20px;
+        width: 40%;
+      }
+      label {
+        margin-right: 4px;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 30px;
+      }
+      textarea {
+        resize: none;
+      }
+
+      .err {
+        font-size: 11px;
+        color: #f00;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: $tablet) {
+  .Join {
+    table {
       td {
-        border-bottom: 1px solid #bbb;
-        border-left: 1px solid #bbb;
-        padding: 10px 0 10px 30px;
         input[type="text"],
-        input[type="password"] {
-          border: 1px solid #ccc;
-          padding: 6px 20px;
-          width: 40%;
+        input[type="password"],
+        select,
+        textarea {
+          width: 80%;
         }
         .err {
-          font-size: 11px;
-          color: #f00;
-          margin-left: 20px;
+          display: block;
+          margin-left: 0;
+          margin-top: 10px;
         }
       }
     }
   }
+}
+@media screen and (max-width: $mp) {
+  .Join {
+    table {
+      th {
+        display: none;
+        &:last-child {
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+          padding-left: 0;
+          input[type="submit"],
+          input[type="reset"] {
+            width: 130px;
+            margin: 0;
+          }
+        }
+      }
+      td {
+        border-left: none;
+        padding-left: 0px;
+        input[type="text"],
+        input[type="password"],
+        textarea,
+        select {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
