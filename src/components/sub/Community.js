@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Layout from "../common/Layout";
+import CommunityCard from "./CommunityCard";
 
 const Community = () => {
   // 데모용 데이터 생성
@@ -173,51 +174,17 @@ const Community = () => {
             // 중복되지않는 key 를 만들어주는 라이브러리
             // 그러나 기본은 가능하면 본인이 key를 관리
             return (
-              <article key={index}>
-                {item.enableUpdate ? (
-                  /* 업데이트일때 보여줄 JSX */
-                  <>
-                    <div className="txt">
-                      <input
-                        type="text"
-                        defaultValue={item.title}
-                        placeholder="제목을 입력하세요"
-                        ref={inputEdit}
-                      />
-                      <br />
-                      <textarea
-                        cols="30"
-                        rows="5"
-                        defaultValue={item.content}
-                        placeholder="내용을 입력해주세요."
-                        ref={textareaEdit}
-                      ></textarea>
-                    </div>
-                    <div className="btnSet">
-                      {/* 업데이트 취소 */}
-                      <button onClick={() => disapleUpdate(index)}>
-                        CANCEL
-                      </button>
-                      {/* 내용 업데이트 */}
-                      <button onClick={() => updatePost(index)}>SAVE</button>
-                    </div>
-                  </>
-                ) : (
-                  /* 목록일때 보여줄 JSX */
-                  <>
-                    <div className="txt">
-                      <h2>{item.title}</h2>
-                      <p>{item.content}</p>
-                    </div>
-                    <div className="btnSet">
-                      {/* 업데이트기능 */}
-                      <button onClick={() => enableUpdate(index)}>EDIT</button>
-                      {/* 삭제기능 */}
-                      <button onClick={() => deletePost(index)}>DELETE</button>
-                    </div>
-                  </>
-                )}
-              </article>
+            <CommunityCard 
+            item={item}
+             inputEdit={inputEdit} 
+             
+              disapleUpdate={disapleUpdate}
+             index={index}
+             updatePost={updatePost}
+             enableUpdate={enableUpdate}
+             deletePost={deletePost}
+             textareaEdit={textareaEdit}
+             />
             );
           })
         }
