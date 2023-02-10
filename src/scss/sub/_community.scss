@@ -39,10 +39,21 @@
         margin-bottom: 40px;
         padding: 30px;
         background: #fff;
+        .txt {
+          width: 70%;
+          input,
+          textarea {
+            width: 70%;
+            border: 1px solid #bbb;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            resize: none;
+          }
+        }
         .btnSet {
           display: flex;
           align-items: center;
-          width: 35%;
+          width: 25%;
           button {
             width: 50%;
             height: 30px;
