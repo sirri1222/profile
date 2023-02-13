@@ -39,6 +39,12 @@
         margin-bottom: 40px;
         padding: 30px;
         background: #fff;
+        form {
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
         .txt {
           width: 70%;
           input,

@@ -17,6 +17,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 const schema = yup.object({
   title: yup.string().trim().required("제목을 입력해주세요."),
   content: yup.string().trim().required("내용을 입력해주세요."),
+  timestamp: yup.string().required("날짜를 선택해 주세요"),
 });
 
 const Community = () => {
@@ -43,12 +44,19 @@ const Community = () => {
     { title: "Hello 4", content: "Welocome To React!" },
     { title: "Hello 5", content: "Welocome To React!" },
   ];
-  const [posts, setPosts] = useState(initPost);
 
-  const inputEdit = useRef(null);
-  const textareaEdit = useRef(null);
+  // 로컬에 저장된 내용을 가지고 온다.
+  const getLocalPost = () => {
+    const data = localStorage.getItem("post");
+    if (data === null) {
+      return [];
+    } else {
+      return JSON.parse(data);
+    }
+  };
+  const [posts, setPosts] = useState(getLocalPost());
+
   const [Allowed, setAllowed] = useState(true);
-
   const createPost = (data) => {
     // data ======>  { title: title, content: conten}
     setPosts([...posts, data]);
@@ -100,17 +108,13 @@ const Community = () => {
     );
   };
   // 게시물 업데이트
-  const updatePost = (idx) => {
-    if (!inputEdit.current.value.trim() || !textareaEdit.current.value.trim()) {
-      inputEdit.current.value = "";
-      textareaEdit.current.value = "";
-      return alert("수정할 제목과 내용을 입력해주세요.");
-    }
+  const updatePost = (data) => {
     setPosts(
       posts.map((item, index) => {
-        if (idx === index) {
-          item.title = inputEdit.current.value;
-          item.content = textareaEdit.current.value;
+        // 숫자로 변경하여서 비교
+        if (parseInt(data.index) === index) {
+          item.title = data.title;
+          item.content = data.content;
           item.enableUpdate = false;
         }
         return item;
@@ -119,9 +123,10 @@ const Community = () => {
 
     setAllowed(true);
   };
-  // 디버깅
+
+  // 로컬에 저장
   useEffect(() => {
-    console.log(posts);
+    localStorage.setItem("post", JSON.stringify(posts));
   }, [posts]);
 
   return (
@@ -144,6 +149,10 @@ const Community = () => {
             {...register("content")}
           ></textarea>
           <span className="err">{errors.content?.message}</span>
+          <br />
+          <input type="date" {...register("timestamp")} />
+          <span className="err">{errors.timestamp?.message}</span>
+          <br />
           <div className="btnSet">
             {/* form 안쪽에 버튼은 type 을 정의한다. */}
             <button type="reset">CANCEL</button>
@@ -158,8 +167,6 @@ const Community = () => {
             <CommunityCard
               key={index}
               item={item}
-              inputEdit={inputEdit}
-              textareaEdit={textareaEdit}
               disapleUpdate={disapleUpdate}
               updatePost={updatePost}
               enableUpdate={enableUpdate}
